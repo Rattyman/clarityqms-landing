@@ -264,6 +264,36 @@
     margin-top: 14px;
   }
 
+  /* PITCH / WHY SECTION */
+  .pitch {
+    padding: 8px 0 64px;
+  }
+  .pitch-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--maroon);
+    border-radius: 14px;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 36px 40px;
+  }
+  .pitch-card h2 {
+    font-size: 22px;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+  }
+  .pitch-card p {
+    font-size: 15px;
+    color: var(--text-mid);
+    margin-bottom: 14px;
+  }
+  .pitch-card p:last-child {
+    margin-bottom: 0;
+  }
+  .pitch-card strong {
+    color: var(--text-dark);
+  }
+
   footer {
     border-top: 1px solid var(--border);
     padding: 28px 0;
@@ -276,6 +306,7 @@
     .hero h1 { font-size: 34px; }
     .feature-grid { grid-template-columns: 1fr; }
     .interest-card { padding: 32px 24px; }
+    .pitch-card { padding: 28px 24px; }
   }
 </style>
 </head>
@@ -384,6 +415,18 @@
   </div>
 </section>
 
+<section class="pitch">
+  <div class="wrap">
+    <div class="pitch-card">
+      <h2>Why we built this</h2>
+      <p>We built Clarity QMS after watching too many small manufacturers pay big money for MRP systems, only to find themselves <strong>logging out so a colleague can get in</strong>.</p>
+      <p>If you're a smaller aerospace or precision engineering business — the kind that can't justify thousands in licensing and per-seat fees for the big MRP platforms — Clarity QMS gives you a simpler, focused alternative: proper AS9100 and ISO 9001 quality management, built by someone who's actually sat inside businesses like yours as a consultant and auditor, not a software company guessing what quality teams need.</p>
+      <p><strong>No per-seat limits.</strong> Everyone who needs to be in the system — quality, production, engineering — can be in it at the same time, because it's built to work the way a small team actually works.</p>
+      <p>We're not trying to be everything. We're trying to be the quality system that just works, at a price that makes sense for a 10-50 person shop, without the bloat, the training courses, and the "call your implementation partner" complexity that comes with the bigger names.</p>
+    </div>
+  </div>
+</section>
+
 <section class="interest">
   <div class="wrap">
     <div class="interest-card">
@@ -421,6 +464,5 @@
   © 2026 Clarity QMS™ · A product of Ratcliffe Quality Consultancy Ltd
 </footer>
 
-<!-- deploy trigger: force a fresh Vercel build from this repo -->
 </body>
 </html>
