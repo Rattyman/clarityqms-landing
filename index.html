@@ -294,6 +294,84 @@
     color: var(--text-dark);
   }
 
+  /* WHAT'S COMING NEXT */
+  .coming-next {
+    padding: 0 0 64px;
+  }
+  .coming-next-card h2 {
+    font-size: 22px;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+  }
+  .coming-next-item {
+    padding: 16px 0;
+    border-top: 1px solid var(--border);
+  }
+  .coming-next-item:first-of-type {
+    border-top: none;
+    padding-top: 8px;
+  }
+  .coming-next-item h3 {
+    font-size: 15.5px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+  }
+  .coming-next-item p {
+    font-size: 14px;
+    color: var(--text-mid);
+  }
+
+  /* NEWS & ARTICLES */
+  .news {
+    padding: 0 0 64px;
+  }
+  .news h2 {
+    text-align: center;
+    font-size: 15px;
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+    margin-bottom: 28px;
+  }
+  .news-list {
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .news-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    display: block;
+    text-decoration: none;
+    transition: border-color 0.15s ease;
+  }
+  .news-item:hover {
+    border-color: var(--rust);
+  }
+  .news-item .news-meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--text-soft);
+    margin-bottom: 6px;
+  }
+  .news-item h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+  }
+  .news-item p {
+    font-size: 14px;
+    color: var(--text-mid);
+    margin: 0;
+  }
+
   footer {
     border-top: 1px solid var(--border);
     padding: 28px 0;
@@ -307,6 +385,7 @@
     .feature-grid { grid-template-columns: 1fr; }
     .interest-card { padding: 32px 24px; }
     .pitch-card { padding: 28px 24px; }
+    .news-item { padding: 18px 20px; }
   }
 </style>
 </head>
@@ -427,6 +506,22 @@
   </div>
 </section>
 
+<section class="coming-next" id="coming-next-section" style="display:none;">
+  <div class="wrap">
+    <div class="pitch-card coming-next-card">
+      <h2>What's Coming Next</h2>
+      <div id="coming-next-list"></div>
+    </div>
+  </div>
+</section>
+
+<section class="news" id="news-section" style="display:none;">
+  <div class="wrap">
+    <h2>News &amp; Articles of Interest</h2>
+    <div class="news-list" id="news-list"></div>
+  </div>
+</section>
+
 <section class="interest">
   <div class="wrap">
     <div class="interest-card">
@@ -463,6 +558,69 @@
 <footer>
   © 2026 Clarity QMS™ · A product of Ratcliffe Quality Consultancy Ltd
 </footer>
+
+<script>
+// Loads content.json (same folder as this page) and populates the
+// "What's Coming Next" / "News & Articles of Interest" sections. Both
+// sections start hidden (display:none in the HTML above) and are only
+// revealed once there's actually something to show — an empty array, a
+// missing file, or a fetch error all just leave them hidden rather than
+// showing a broken or empty-looking section. Edit content.json to add
+// entries; no other file needs to change.
+(function () {
+  function el(tag, className, text) {
+    var e = document.createElement(tag);
+    if (className) e.className = className;
+    if (text !== undefined) e.textContent = text;
+    return e;
+  }
+
+  function formatDate(iso) {
+    var d = new Date(iso);
+    if (isNaN(d.getTime())) return iso;
+    return d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+  }
+
+  fetch('content.json')
+    .then(function (res) { return res.ok ? res.json() : Promise.reject(new Error('content.json not found')); })
+    .then(function (data) {
+      var comingNext = Array.isArray(data.comingNext) ? data.comingNext : [];
+      var news = Array.isArray(data.news) ? data.news : [];
+
+      if (comingNext.length > 0) {
+        var cnList = document.getElementById('coming-next-list');
+        comingNext.forEach(function (item) {
+          var row = el('div', 'coming-next-item');
+          row.appendChild(el('h3', null, item.title || ''));
+          row.appendChild(el('p', null, item.description || ''));
+          cnList.appendChild(row);
+        });
+        document.getElementById('coming-next-section').style.display = '';
+      }
+
+      if (news.length > 0) {
+        var newsList = document.getElementById('news-list');
+        news
+          .slice()
+          .sort(function (a, b) { return new Date(b.date) - new Date(a.date); })
+          .forEach(function (item) {
+            var card = el('a', 'news-item');
+            card.href = item.url || '#';
+            card.target = '_blank';
+            card.rel = 'noopener noreferrer';
+            card.appendChild(el('div', 'news-meta', formatDate(item.date)));
+            card.appendChild(el('h3', null, item.title || ''));
+            card.appendChild(el('p', null, item.summary || ''));
+            newsList.appendChild(card);
+          });
+        document.getElementById('news-section').style.display = '';
+      }
+    })
+    .catch(function () {
+      // Both sections stay hidden — see comment above.
+    });
+})();
+</script>
 
 </body>
 </html>
