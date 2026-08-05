@@ -298,6 +298,13 @@
   .coming-next {
     padding: 0 0 64px;
   }
+  .coming-next-note {
+    text-align: center;
+    color: var(--text-mid);
+    font-size: 14.5px;
+    max-width: 560px;
+    margin: 0 auto 28px;
+  }
   .coming-next-card h2 {
     font-size: 22px;
     color: var(--text-dark);
@@ -508,6 +515,7 @@
 
 <section class="coming-next" id="coming-next-section" style="display:none;">
   <div class="wrap">
+    <p class="coming-next-note">Everything above is already built and live today — and being actively refined by an alpha group of real quality professionals, ahead of Beta testing with live client data later this year.</p>
     <div class="pitch-card coming-next-card">
       <h2>What's Coming Next</h2>
       <div id="coming-next-list"></div>
@@ -560,13 +568,13 @@
 </footer>
 
 <script>
-// Loads content.json (same folder as this page) and populates the
-// "What's Coming Next" / "News & Articles of Interest" sections. Both
-// sections start hidden (display:none in the HTML above) and are only
-// revealed once there's actually something to show — an empty array, a
-// missing file, or a fetch error all just leave them hidden rather than
-// showing a broken or empty-looking section. Edit content.json to add
-// entries; no other file needs to change.
+// Loads whats-coming.json / news-articles.json (same folder as this page)
+// and populates the "What's Coming Next" / "News & Articles of Interest"
+// sections. Each section starts hidden (display:none in the HTML above)
+// and is only revealed once its own file has at least one entry — an
+// empty array, a missing file, or a fetch error just leaves that section
+// hidden, independently of the other one. Edit either JSON file to add
+// or remove entries; no other file needs to change.
 (function () {
   function el(tag, className, text) {
     var e = document.createElement(tag);
@@ -581,44 +589,43 @@
     return d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
   }
 
-  fetch('content.json')
-    .then(function (res) { return res.ok ? res.json() : Promise.reject(new Error('content.json not found')); })
-    .then(function (data) {
-      var comingNext = Array.isArray(data.comingNext) ? data.comingNext : [];
-      var news = Array.isArray(data.news) ? data.news : [];
+  function loadJson(path) {
+    return fetch(path)
+      .then(function (res) { return res.ok ? res.json() : Promise.reject(new Error(path + ' not found')); })
+      .then(function (data) { return Array.isArray(data) ? data : []; })
+      .catch(function () { return []; });
+  }
 
-      if (comingNext.length > 0) {
-        var cnList = document.getElementById('coming-next-list');
-        comingNext.forEach(function (item) {
-          var row = el('div', 'coming-next-item');
-          row.appendChild(el('h3', null, item.title || ''));
-          row.appendChild(el('p', null, item.description || ''));
-          cnList.appendChild(row);
-        });
-        document.getElementById('coming-next-section').style.display = '';
-      }
-
-      if (news.length > 0) {
-        var newsList = document.getElementById('news-list');
-        news
-          .slice()
-          .sort(function (a, b) { return new Date(b.date) - new Date(a.date); })
-          .forEach(function (item) {
-            var card = el('a', 'news-item');
-            card.href = item.url || '#';
-            card.target = '_blank';
-            card.rel = 'noopener noreferrer';
-            card.appendChild(el('div', 'news-meta', formatDate(item.date)));
-            card.appendChild(el('h3', null, item.title || ''));
-            card.appendChild(el('p', null, item.summary || ''));
-            newsList.appendChild(card);
-          });
-        document.getElementById('news-section').style.display = '';
-      }
-    })
-    .catch(function () {
-      // Both sections stay hidden — see comment above.
+  loadJson('whats-coming.json').then(function (comingNext) {
+    if (comingNext.length === 0) return;
+    var cnList = document.getElementById('coming-next-list');
+    comingNext.forEach(function (item) {
+      var row = el('div', 'coming-next-item');
+      row.appendChild(el('h3', null, item.title || ''));
+      row.appendChild(el('p', null, item.description || ''));
+      cnList.appendChild(row);
     });
+    document.getElementById('coming-next-section').style.display = '';
+  });
+
+  loadJson('news-articles.json').then(function (news) {
+    if (news.length === 0) return;
+    var newsList = document.getElementById('news-list');
+    news
+      .slice()
+      .sort(function (a, b) { return new Date(b.date) - new Date(a.date); })
+      .forEach(function (item) {
+        var card = el('a', 'news-item');
+        card.href = item.url || '#';
+        card.target = '_blank';
+        card.rel = 'noopener noreferrer';
+        card.appendChild(el('div', 'news-meta', formatDate(item.date)));
+        card.appendChild(el('h3', null, item.title || ''));
+        card.appendChild(el('p', null, item.summary || ''));
+        newsList.appendChild(card);
+      });
+    document.getElementById('news-section').style.display = '';
+  });
 })();
 </script>
 

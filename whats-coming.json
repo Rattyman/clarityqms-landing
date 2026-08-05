@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Design & Development module",
+    "description": "Structured support for AS9100/ISO 9001 clause 8.3 — design planning, reviews, verification and validation, all in one place."
+  },
+  {
+    "title": "Inventory & stores location tracking",
+    "description": "Track exactly where received goods sit in your stores, including quarantine control before goods-inward inspection is complete."
+  },
+  {
+    "title": "Customer OTD & delivered quality dashboard",
+    "description": "Automatic on-time delivery and product quality metrics, calculated straight from your own despatch and returns data — no spreadsheets required."
+  }
+]
