@@ -1,0 +1,30 @@
+[
+  {
+    "question": "Will my data be safe?",
+    "answer": "Yes. All data is stored securely in the cloud with encrypted connections, and access is strictly separated between companies — one client can never see another's data, enforced at the database level, not just in the app. We're currently working towards Cyber Essentials certification, and while we're not yet certified, we already build and operate to the underlying principles of ISO 27001 information security best practice. We'll publish our Cyber Essentials certification here as soon as it's granted."
+  },
+  {
+    "question": "Is this only for aerospace companies?",
+    "answer": "No. Clarity QMS was built with AS9100 in mind, but it works equally well for straightforward ISO 9001 quality management in any manufacturing business. If you don't need aerospace-specific features, they simply stay switched off."
+  },
+  {
+    "question": "We're a small company — is this overkill for us?",
+    "answer": "It's actually built specifically for smaller manufacturers. Clarity QMS was created after seeing too many 10-50 person companies pay big money for MRP systems designed for much larger operations, then struggle with licensing costs and per-seat limits. We're aiming to be the right-sized alternative."
+  },
+  {
+    "question": "What happens to our data if we ever decide to leave?",
+    "answer": "It's yours, and you can get it back at any time. Any Administrator can export a complete copy of your organisation's data whenever they like — every module, plus all your uploaded documents — as a straightforward download. No need to ask us, and nothing held hostage."
+  },
+  {
+    "question": "How much support do we get getting started?",
+    "answer": "We work alongside you rather than handing over a login and wishing you luck. Given Clarity QMS is developed by a working AS9100/ISO 9001 consultant and auditor, you're getting genuine hands-on help setting things up correctly, not just software support."
+  },
+  {
+    "question": "Does this replace our accounting or MRP system?",
+    "answer": "No — Clarity QMS is a quality management system, not an accounting or full MRP platform. It's built to sit alongside whatever you already use for invoicing and finance, focused on doing quality management properly rather than trying to do everything."
+  },
+  {
+    "question": "Is the product finished?",
+    "answer": "It's real, working software, not a concept — but we're honest that it's still evolving. It's currently being refined by a group of alpha testers before moving into Beta testing with live client data. If you'd like to be part of that journey, get in touch below."
+  }
+]

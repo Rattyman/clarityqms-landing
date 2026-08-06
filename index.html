@@ -379,6 +379,66 @@
     margin: 0;
   }
 
+  /* FAQ */
+  .faq {
+    padding: 0 0 64px;
+  }
+  .faq h2 {
+    text-align: center;
+    font-size: 15px;
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+    margin-bottom: 28px;
+  }
+  .faq-list {
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .faq-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .faq-item summary {
+    padding: 18px 24px;
+    font-size: 15.5px;
+    font-weight: 600;
+    color: var(--text-dark);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item summary::after {
+    content: '+';
+    flex-shrink: 0;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 19px;
+    color: var(--rust-deep);
+  }
+  .faq-item[open] summary::after {
+    content: '−';
+  }
+  .faq-item[open] summary {
+    border-bottom: 1px solid var(--border);
+  }
+  .faq-item .faq-answer {
+    padding: 16px 24px 20px;
+    font-size: 14.5px;
+    color: var(--text-mid);
+  }
+
   footer {
     border-top: 1px solid var(--border);
     padding: 28px 0;
@@ -393,6 +453,8 @@
     .interest-card { padding: 32px 24px; }
     .pitch-card { padding: 28px 24px; }
     .news-item { padding: 18px 20px; }
+    .faq-item summary { padding: 16px 20px; }
+    .faq-item .faq-answer { padding: 14px 20px 18px; }
   }
 </style>
 </head>
@@ -530,6 +592,13 @@
   </div>
 </section>
 
+<section class="faq" id="faq-section" style="display:none;">
+  <div class="wrap">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list" id="faq-list"></div>
+  </div>
+</section>
+
 <section class="interest">
   <div class="wrap">
     <div class="interest-card">
@@ -625,6 +694,18 @@
         newsList.appendChild(card);
       });
     document.getElementById('news-section').style.display = '';
+  });
+
+  loadJson('faq.json').then(function (faqs) {
+    if (faqs.length === 0) return;
+    var faqList = document.getElementById('faq-list');
+    faqs.forEach(function (item) {
+      var row = el('details', 'faq-item');
+      row.appendChild(el('summary', null, item.question || ''));
+      row.appendChild(el('div', 'faq-answer', item.answer || ''));
+      faqList.appendChild(row);
+    });
+    document.getElementById('faq-section').style.display = '';
   });
 })();
 </script>
