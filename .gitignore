@@ -1,0 +1,6 @@
+# macOS Finder writes these into any folder it opens.
+# Specific to one machine, changes when a window is resized, useful to nobody else.
+.DS_Store
+
+# Scratch space for anything that needs moving out of the way.
+_to_delete/
