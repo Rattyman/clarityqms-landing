@@ -25,6 +25,14 @@
   },
   {
     "question": "Is the product finished?",
-    "answer": "It's real, working software in daily use — not a concept, and not a demo. Alpha testing is complete. A closed beta with live client data runs from October to December 2026. We're honest that it keeps evolving: features are added and refined continuously, and we would rather tell you what exists today than read you a roadmap."
+    "answer": "It's real, working software in daily use — not a concept, and not a demo. Alpha testing is complete. A closed beta with live client data runs through autumn 2026, starting when it is ready rather than on a date. Demonstrations on a populated demo company are available now. We're honest that it keeps evolving: features are added and refined continuously, and we would rather tell you what exists today than read you a roadmap."
+  },
+  {
+    "question": "Can I try it before the beta?",
+    "answer": "Yes. We run a populated demonstration company — suppliers, customers, parts, orders, a year of records — and can give you a login to it. You can raise quotes, send purchase orders, book goods in and work route cards yourself; nothing in it is real and every email it sends comes to us, not to a real company. Ask on the form below."
+  },
+  {
+    "question": "Can I bring my data across from my current MRP?",
+    "answer": "That is coming: a spreadsheet import for your suppliers, customers, materials and part numbers, mapped once to Clarity's fields with a preview before anything is created. Tricorn, Javelin, Match It and Progress Plus all export to Excel or CSV, which is all it needs. Open orders and history stay where they are — a clean cut-over, the way any MRP change works."
   }
 ]

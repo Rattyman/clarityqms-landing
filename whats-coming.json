@@ -1,5 +1,13 @@
 [
   {
+    "title": "Bulk import from your MRP",
+    "description": "Bring suppliers, customers, materials and part numbers across from Tricorn, Javelin, Match It, Progress Plus or any spreadsheet — upload the export, map the columns once, check the preview, press once. Masters only; you cut over cleanly rather than dragging history."
+  },
+  {
+    "title": "Cost build-up behind a quote",
+    "description": "Quantity breaks, process time against your work-centre rates, material by the unit, your fixed charges and mark-up — a costing sheet on every quote line, so the price on the PDF has its working behind it."
+  },
+  {
     "title": "Cross-company connection & visibility",
     "description": "Connect with your customers and suppliers directly on Clarity QMS. With mutual agreement, share real-time progress on a specific order — automated notifications as each stage completes, full transparency without a single phone call."
   }
