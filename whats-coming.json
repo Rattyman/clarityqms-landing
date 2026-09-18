@@ -1,7 +1,7 @@
 [
   {
     "title": "Bulk import from your MRP",
-    "description": "Bring suppliers, customers, materials and part numbers across from Tricorn, Javelin, Match It, Progress Plus or any spreadsheet — upload the export, map the columns once, check the preview, press once. Masters only; you cut over cleanly rather than dragging history."
+    "description": "Bring suppliers, customers, materials and part numbers from any MRP that exports to Excel or CSV, or from any spreadsheet — upload the export, map the columns once, check the preview, press once. Masters only; you cut over cleanly rather than dragging history."
   },
   {
     "title": "Cost build-up behind a quote",
