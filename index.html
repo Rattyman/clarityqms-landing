@@ -191,6 +191,46 @@
     color: var(--text-mid);
   }
 
+  /* A LOOK INSIDE — screenshots of the app, taken from the populated
+     demonstration company (fictional data), so the captions say so. */
+  .inside {
+    padding: 8px 0 40px;
+  }
+  .inside h2 {
+    text-align: center;
+    font-size: 15px;
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+    margin-bottom: 28px;
+  }
+  .shot-grid {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    gap: 20px;
+    align-items: start;
+  }
+  .shot {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 10px;
+    box-shadow: 0 10px 30px rgba(58, 42, 32, 0.08);
+  }
+  .shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+  }
+  .shot figcaption {
+    font-size: 13px;
+    color: var(--text-mid);
+    padding: 12px 6px 4px;
+  }
+
   /* INTEREST FORM */
   .interest {
     padding: 24px 0 96px;
@@ -450,6 +490,7 @@
   @media (max-width: 720px) {
     .hero h1 { font-size: 34px; }
     .feature-grid { grid-template-columns: 1fr; }
+    .shot-grid { grid-template-columns: 1fr; }
     .interest-card { padding: 32px 24px; }
     .pitch-card { padding: 28px 24px; }
     .news-item { padding: 18px 20px; }
@@ -479,6 +520,24 @@
     <div class="ticker-shell">
       <div class="ticker-dot"></div>
       <div class="ticker-text"><b>NCR-0042</b> closed · <b>Cal due</b> — Micrometer 3, 4 days · <b>Audit</b> scheduled for Process 4.2</div>
+    </div>
+  </div>
+</section>
+
+<section class="inside">
+  <div class="wrap">
+    <h2>A look inside</h2>
+    <div class="shot-grid">
+      <figure class="shot">
+        <img src="images/app-dashboard.jpg" width="1600" height="1200" loading="lazy" decoding="async"
+             alt="The Clarity QMS quality dashboard: open and overdue NCRs, audits, pending purchase-order approvals, calibration due, and stock expiring within 30 days, beside the module navigation.">
+        <figcaption>The quality dashboard — live counts across every module, and what is waiting on you. Shown on our demonstration company.</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="images/app-modules.jpg" width="1488" height="912" loading="lazy" decoding="async"
+             alt="Module cards from the Clarity QMS dashboard: Processes, Customers, Quotes, Contract Review, Design &amp; Development, First Article Inspection, Route Card Planning, Order Acknowledgements, Capacity Planning, KPI Reporting, Quality Policy &amp; Scope and Document Control.">
+        <figcaption>Every module one click from the dashboard — the ones your organisation has switched on.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
