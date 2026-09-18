@@ -29,10 +29,10 @@
   },
   {
     "question": "Can I try it before the beta?",
-    "answer": "Yes. We run a populated demonstration company — suppliers, customers, parts, orders, a year of records — and can give you a login to it. You can raise quotes, send purchase orders, book goods in and work route cards yourself; nothing in it is real and every email it sends comes to us, not to a real company. Ask on the form below."
+    "answer": "Yes. We run a populated demonstration company — suppliers, customers, parts, orders, a year of records — and can give you a login to it. You can raise quotes, send purchase orders, book goods in and work route cards yourself; nothing in it is real and every business email it sends comes to us, not to a real company. Ask on the form below."
   },
   {
     "question": "Can I bring my data across from my current MRP?",
-    "answer": "That is coming: a spreadsheet import for your suppliers, customers, materials and part numbers, mapped once to Clarity's fields with a preview before anything is created. Tricorn, Javelin, Match It and Progress Plus all export to Excel or CSV, which is all it needs. Open orders and history stay where they are — a clean cut-over, the way any MRP change works."
+    "answer": "That is coming: a spreadsheet import for your suppliers, customers, materials and part numbers, mapped once to Clarity's fields with a preview before anything is created. If your current system can export to Excel or CSV, that is all it needs. Open orders and history stay where they are — a clean cut-over, the way any MRP change works."
   }
 ]
