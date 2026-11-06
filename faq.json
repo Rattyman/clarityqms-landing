@@ -4,6 +4,10 @@
     "answer": "Yes. All data is stored securely in the cloud with encrypted connections, and access is strictly separated between companies — one client can never see another's data, enforced at the database level, not just in the app. We're currently working towards Cyber Essentials certification, and while we're not yet certified, we already build and operate to the underlying principles of ISO 27001 information security best practice. We'll publish our Cyber Essentials certification here as soon as it's granted."
   },
   {
+    "question": "Does it use AI?",
+    "answer": "Only if you switch it on. AI assist on the nonconformance report is off by default and enabled per organisation. When it is on, it suggests draft wording that the engineer accepts or discards; nothing is saved unless a person presses Use this, every use is recorded in the audit log, and it never sees another organisation's data."
+  },
+  {
     "question": "Is this only for aerospace companies?",
     "answer": "No. Clarity QMS was built with AS9100 in mind, but it works equally well for straightforward ISO 9001 quality management in any manufacturing business. If you don't need aerospace-specific features, they simply stay switched off."
   },
@@ -25,14 +29,14 @@
   },
   {
     "question": "Is the product finished?",
-    "answer": "It's real, working software in daily use — not a concept, and not a demo. Alpha testing is complete. A closed beta with live client data runs through autumn 2026, starting when it is ready rather than on a date. Demonstrations on a populated demo company are available now. We're honest that it keeps evolving: features are added and refined continuously, and we would rather tell you what exists today than read you a roadmap."
+    "answer": "It's real, working software in daily use — not a concept, and not a demo. The closed beta began in November 2026 with a small number of manufacturers, on live client data, and runs to the end of February 2027. Demonstrations on a populated demo company are available now. We're honest that it keeps evolving: features are added and refined continuously, and we would rather tell you what exists today than read you a roadmap."
   },
   {
-    "question": "Can I try it before the beta?",
+    "question": "Can I try it first?",
     "answer": "Yes. We run a populated demonstration company — suppliers, customers, parts, orders, a year of records — and can give you a login to it. You can raise quotes, send purchase orders, book goods in and work route cards yourself; nothing in it is real and every business email it sends comes to us, not to a real company. Ask on the form below."
   },
   {
     "question": "Can I bring my data across from my current MRP?",
-    "answer": "That is coming: a spreadsheet import for your suppliers, customers, materials and part numbers, mapped once to Clarity's fields with a preview before anything is created. If your current system can export to Excel or CSV, that is all it needs. Open orders and history stay where they are — a clean cut-over, the way any MRP change works."
+    "answer": "Suppliers and customers: yes, today — from any spreadsheet or MRP export that saves to Excel or CSV. Upload it, map the columns once to Clarity's fields, check the preview, press once. Controlled documents: yes, today — your procedures, policies and work instructions in batches by type, with number, title and revision read from the file names. Materials and part numbers: coming. Open orders and history stay where they are — a clean cut-over, the way any MRP change works."
   }
 ]
