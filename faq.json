@@ -9,11 +9,11 @@
   },
   {
     "question": "Is this only for aerospace companies?",
-    "answer": "No. Clarity QMS is an ISO 9001 quality management system for any manufacturing business. It was built with AS9100 and AS9120 knowledge, so the aerospace requirements — first article inspection to AS9102, customer flow-downs, counterfeit-parts control — are there in full for the companies that need them, and simply stay switched off for everyone else."
+    "answer": "No. Desiato QMS is an ISO 9001 quality management system for any manufacturing business. It was built with AS9100 and AS9120 knowledge, so the aerospace requirements — first article inspection to AS9102, customer flow-downs, counterfeit-parts control — are there in full for the companies that need them, and simply stay switched off for everyone else."
   },
   {
     "question": "We're a small company — is this overkill for us?",
-    "answer": "It's actually built specifically for smaller manufacturers. Clarity QMS was created after seeing too many 10-50 person companies pay big money for MRP systems designed for much larger operations, then struggle with licensing costs and per-seat limits. We're aiming to be the right-sized alternative."
+    "answer": "It's actually built specifically for smaller manufacturers. Desiato QMS was created after seeing too many 10-50 person companies pay big money for MRP systems designed for much larger operations, then struggle with licensing costs and per-seat limits. We're aiming to be the right-sized alternative."
   },
   {
     "question": "What happens to our data if we ever decide to leave?",
@@ -21,11 +21,11 @@
   },
   {
     "question": "How much support do we get getting started?",
-    "answer": "We work alongside you rather than handing over a login and wishing you luck. Given Clarity QMS is developed by a working AS9100/ISO 9001 consultant and auditor, you're getting genuine hands-on help setting things up correctly, not just software support."
+    "answer": "We work alongside you rather than handing over a login and wishing you luck. Given Desiato QMS is developed by a working AS9100/ISO 9001 consultant and auditor, you're getting genuine hands-on help setting things up correctly, not just software support."
   },
   {
     "question": "Does this replace our accounting or MRP system?",
-    "answer": "No — Clarity QMS is a quality management system, not an accounting or full MRP platform. It's built to sit alongside whatever you already use for invoicing and finance, focused on doing quality management properly rather than trying to do everything."
+    "answer": "No — Desiato QMS is a quality management system, not an accounting or full MRP platform. It's built to sit alongside whatever you already use for invoicing and finance, focused on doing quality management properly rather than trying to do everything."
   },
   {
     "question": "Is the product finished?",
@@ -37,6 +37,6 @@
   },
   {
     "question": "Can I bring my data across from my current MRP?",
-    "answer": "Suppliers and customers: yes, today — from any spreadsheet or MRP export that saves to Excel or CSV. Upload it, map the columns once to Clarity's fields, check the preview, press once. Controlled documents: yes, today — your procedures, policies and work instructions in batches by type, with number, title and revision read from the file names. Materials and part numbers: coming. Open orders and history stay where they are — a clean cut-over, the way any MRP change works."
+    "answer": "Suppliers and customers: yes, today — from any spreadsheet or MRP export that saves to Excel or CSV. Upload it, map the columns once to Desiato's fields, check the preview, press once. Controlled documents: yes, today — your procedures, policies and work instructions in batches by type, with number, title and revision read from the file names. Materials and part numbers: coming. Open orders and history stay where they are — a clean cut-over, the way any MRP change works."
   }
 ]
